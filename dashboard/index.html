@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlas, gobierno del uso de IA</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='9' y='9' width='14' height='14' transform='rotate(45 16 16)' fill='%230f1115'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand"><span class="mark"></span> Atlas</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <div class="wrap hero">
+      <p class="eyebrow">Gobierno del uso de IA en desarrollo</p>
+      <h1>De uso disperso a gobernanza informada.</h1>
+      <p class="lead">Observa cómo los equipos usan la IA y entrega la decisión, no solo el dato.</p>
+      <div class="stats" id="stats"></div>
+    </div>
+
+    <!-- Brief -->
+    <section class="wrap reveal">
+      <p class="sec-label">Decisión</p>
+      <div class="card">
+        <div class="brief-head">
+          <h2>Brief de gobernanza</h2>
+          <div class="brief-tools">
+            <button class="replay" id="replay" type="button">↻ Reanalizar</button>
+          </div>
+        </div>
+        <div class="brief-status" id="brief-status">Analizando telemetría</div>
+        <div class="resumen" id="resumen"></div>
+        <div class="integrity" id="integrity"></div>
+        <div class="findings" id="findings"></div>
+        <table class="limits" id="limits"></table>
+      </div>
+    </section>
+
+    <!-- Control: politica y cumplimiento (simulador interactivo) -->
+    <section class="wrap reveal">
+      <p class="sec-label">Control · cumplimiento</p>
+      <div class="card">
+        <div class="policy-top">
+          <div class="policy-score">
+            <div class="big num" id="policy-pct">···</div>
+            <div class="lbl" id="policy-meta">cumplimiento de las reglas de la empresa</div>
+          </div>
+          <div class="policy-teams" id="policy-teams"></div>
+        </div>
+        <div class="sim-bar">
+          <span class="sim-hint">Resuelve cada problema y mira subir el cumplimiento:</span>
+          <div class="sim-actions">
+            <button id="sim-apply" type="button" class="sim-btn">Aplicar todo</button>
+            <button id="sim-reset" type="button" class="sim-btn ghost" hidden>Reiniciar</button>
+          </div>
+        </div>
+        <div class="violations" id="violations"></div>
+      </div>
+    </section>
+
+    <!-- Simulador del techo de coste (ajustar un parametro de la politica) -->
+    <section class="wrap reveal">
+      <p class="sec-label">Control · simular una regla</p>
+      <div class="card">
+        <div class="ceil-head">
+          <div class="ceil-readout" id="ceil-readout">···</div>
+          <div class="ceil-control">
+            <input type="range" id="ceil-slider" min="10" max="110" step="1" value="50" aria-label="Techo de coste por semana" />
+            <div class="ceil-val"><span id="ceil-val">50</span> €/semana</div>
+          </div>
+        </div>
+        <div class="ceil-sub">Mueve el techo de gasto por equipo y semana, y mira al instante quién se pasa.</div>
+        <div class="ceil-bars" id="ceil-bars"></div>
+      </div>
+    </section>
+
+    <!-- Gobernanza en el tiempo (scorecard longitudinal) -->
+    <section class="wrap reveal">
+      <p class="sec-label">Tendencia · salud de gobierno</p>
+      <div class="split">
+        <div class="card">
+          <h2 class="card-title">Índice de salud de gobierno, 8 semanas</h2>
+          <svg class="chart" id="health-chart" viewBox="0 0 640 260" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Salud de gobierno semana a semana"></svg>
+          <div class="health-comp" id="health-comp"></div>
+        </div>
+        <div class="card callout">
+          <div class="metric">
+            <div class="big num" id="health-now">···</div>
+            <div class="lbl" id="health-now-lbl"></div>
+          </div>
+          <div class="metric">
+            <div class="big num" id="health-delta">···</div>
+            <div class="lbl">cambio desde la primera semana. La salud cae cuando un equipo se sale de la política, y marca cuándo intervenir.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost spike -->
+    <section class="wrap reveal">
+      <p class="sec-label">Señal · pico de coste</p>
+      <div class="split">
+        <div class="card">
+          <h2 class="card-title" id="spike-title">Coste semanal</h2>
+          <svg class="chart" id="spike-chart" viewBox="0 0 640 260" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Coste semanal con anomalía"></svg>
+          <div class="teambars" id="teambars"></div>
+        </div>
+        <div class="card callout">
+          <div class="metric">
+            <div class="big danger num" id="spike-x">···</div>
+            <div class="lbl" id="spike-lbl"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What-if simulator (Decisiones) -->
+    <section class="wrap reveal">
+      <p class="sec-label">Decisión · simulador what-if</p>
+      <div class="split">
+        <div class="card">
+          <h2 class="card-title">Si aplicas la política recomendada</h2>
+          <svg class="chart" id="whatif-chart" viewBox="0 0 640 260" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Coste real frente a coste bajo la política"></svg>
+          <div class="legend" id="whatif-legend"></div>
+        </div>
+        <div class="card callout">
+          <div class="metric">
+            <div class="big positive num" id="whatif-saved">···</div>
+            <div class="lbl" id="whatif-lbl"></div>
+          </div>
+          <div class="metric">
+            <div class="big num" id="whatif-annual">···</div>
+            <div class="lbl">lo mismo proyectado a un año, si se mantiene el ritmo.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evidence: tool vs IA -->
+    <section class="wrap reveal">
+      <p class="sec-label">Valor de la IA, medido</p>
+      <div class="card">
+        <div class="evidence" id="evidence"></div>
+        <p class="ev-cap" id="ev-cap"></p>
+      </div>
+    </section>
+
+    <!-- Secret catch -->
+    <section class="wrap reveal">
+      <p class="sec-label">Riesgo · fuga de datos sensibles</p>
+      <div class="card secret-card">
+        <div class="secret-head">
+          <span class="verdict miss">Reglas: no lo ve</span>
+          <span class="verdict catch">IA: secreto detectado</span>
+        </div>
+        <div class="prompt-quote" id="secret-quote"></div>
+        <p class="secret-foot" id="secret-foot"></p>
+        <p class="pii-note" id="pii-note"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Snapshot de respaldo versionado (la demo funciona siempre, incluso recien
+       clonada). Si existe data.js en vivo (tras export-dashboard), lo sobrescribe. -->
+  <script src="data.demo.js"></script>
+  <script src="data.js" onerror="void 0"></script>
+  <script src="app.js"></script>
+</body>
+</html>

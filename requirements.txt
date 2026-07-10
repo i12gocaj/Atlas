@@ -1,0 +1,19 @@
+# Dependencias de Atlas.
+# La generacion del dataset es Python puro (sin dependencias).
+# La capa de señales usa pandas.
+pandas>=2.0
+
+# Vectorizacion TF-IDF del detector de boilerplate (hecha a mano con numpy, sin
+# scikit-learn). pandas ya arrastra numpy, pero lo declaramos porque lo usamos
+# de forma directa.
+numpy>=1.24
+
+# Motor de politicas: la politica vive en policy.yaml (policy-as-code).
+PyYAML>=6.0
+
+# Deteccion de secretos estructurados (herramienta especializada, Python-native,
+# offline). Se usa en union con nuestra regex; si falta, el detector degrada.
+detect-secrets>=1.5
+
+# Desarrollo y pruebas.
+pytest>=7.4

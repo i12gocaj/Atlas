@@ -1,0 +1,24 @@
+{"text": "genera el script de conciliación para la cuenta del cliente ES9121000418450200051332", "contains_pii": true, "pii_type": "iban", "hard_negative": false}
+{"text": "el pago no llega a DE89370400440532013000, depura el flujo SEPA", "contains_pii": true, "pii_type": "iban", "hard_negative": false}
+{"text": "valida el formato de GB29NWBK60161331926819 en el endpoint de transferencias", "contains_pii": true, "pii_type": "iban", "hard_negative": false}
+{"text": "mockea una respuesta de la API con el IBAN FR1420041010050500013M02606", "contains_pii": true, "pii_type": "iban", "hard_negative": false}
+{"text": "el alta del usuario con DNI 12345678Z lanza una excepción de validación", "contains_pii": true, "pii_type": "dni", "hard_negative": false}
+{"text": "por qué el cliente 11111111H no pasa el KYC del onboarding", "contains_pii": true, "pii_type": "dni", "hard_negative": false}
+{"text": "registra al extranjero con NIE X1234567L en la tabla de clientes", "contains_pii": true, "pii_type": "dni", "hard_negative": false}
+{"text": "el cobro con la tarjeta 4111 1111 1111 1111 se queda en pending", "contains_pii": true, "pii_type": "tarjeta", "hard_negative": false}
+{"text": "tokeniza 5500 0055 5555 5559 antes de persistirla en base de datos", "contains_pii": true, "pii_type": "tarjeta", "hard_negative": false}
+{"text": "la pasarela rechaza 6011 0009 9013 9424, revisa el flujo 3DS", "contains_pii": true, "pii_type": "tarjeta", "hard_negative": false}
+{"text": "manda el aviso a juan.perez@bancoficticio.es cuando falle el batch nocturno", "contains_pii": true, "pii_type": "email", "hard_negative": false}
+{"text": "el cliente m.lopez@cliente.com reporta un cargo duplicado", "contains_pii": true, "pii_type": "email", "hard_negative": false}
+{"text": "esta cuenta de ejemplo ES0021000418450200051332 es ficticia, no la valides", "contains_pii": false, "pii_type": null, "hard_negative": true}
+{"text": "puse 12345678A en el formulario de alta y peta la validación", "contains_pii": false, "pii_type": null, "hard_negative": true}
+{"text": "el número 4111 1111 1111 1112 está mal tecleado, corrígelo en el test", "contains_pii": false, "pii_type": null, "hard_negative": true}
+{"text": "el pedido 1234 5678 9012 3456 no aparece en el sistema de logística", "contains_pii": false, "pii_type": null, "hard_negative": true}
+{"text": "la incidencia INC-20260012 sigue abierta en el tablero", "contains_pii": false, "pii_type": null, "hard_negative": false}
+{"text": "si el batch falla, llama al soporte interno en el 600123456", "contains_pii": false, "pii_type": null, "hard_negative": false}
+{"text": "el saldo medio de la cartera es 12.345,67 euros este trimestre", "contains_pii": false, "pii_type": null, "hard_negative": false}
+{"text": "imputa el gasto del proyecto a la cuenta contable 430000", "contains_pii": false, "pii_type": null, "hard_negative": false}
+{"text": "genera los tests unitarios del endpoint de pagos con pytest", "contains_pii": false, "pii_type": null, "hard_negative": false}
+{"text": "documenta la API de conciliación con ejemplos de request y response", "contains_pii": false, "pii_type": null, "hard_negative": false}
+{"text": "por qué falla el despliegue en staging tras el último merge a main", "contains_pii": false, "pii_type": null, "hard_negative": false}
+{"text": "refactoriza el servicio de cuentas para inyectar el repositorio", "contains_pii": false, "pii_type": null, "hard_negative": false}

@@ -1,0 +1,51 @@
+# Politica de uso de IA en desarrollo (policy-as-code).
+#
+# Esta es la mitad de "control" del reto: la empresa declara aqui sus reglas y
+# Atlas audita la telemetria de las 8 semanas contra ellas, sin LLM. El motor de
+# evaluacion (analysis/policy.py) es 100% determinista a proposito: un sistema de
+# control tiene que ser auditable y reproducible, no generado por un modelo. El
+# LLM se queda en la prosa del brief, nunca en la decision de cumplimiento.
+#
+# Cada regla mapea a una senal que Atlas ya calcula, asi que los incumplimientos
+# son coherentes con el resto del panel.
+
+version: 1
+
+reglas:
+  cero_secretos:
+    titulo: "Cero secretos a proveedores externos"
+    severidad: critica
+    # Numero maximo de prompts con secreto que pueden salir a un proveedor externo.
+    max_fugas: 0
+
+  techo_coste_semanal:
+    titulo: "Techo de coste semanal por equipo"
+    severidad: alta
+    # Techo de gasto por equipo y semana, segun la criticidad del equipo. Un
+    # equipo critico tiene mas margen, pero ninguno es ilimitado.
+    techo_eur_por_criticidad:
+      alta: 50
+      media: 40
+      baja: 30
+
+  sin_derroche_modelo:
+    titulo: "Sin modelo caro en tareas triviales"
+    severidad: media
+    # Tope de gasto recuperable (modelo caro en interacciones pequenas) sobre el
+    # periodo analizado. Por encima, hay que enrutar al modelo barato.
+    max_derroche_eur: 20
+    umbral_tokens: 700
+
+  aceptacion_minima:
+    titulo: "Aceptación mínima de sugerencias"
+    severidad: media
+    # Por debajo de este umbral, el equipo rechaza mas de lo que acepta: el coste
+    # de IA no se traduce en valor. Senal de mal uso o falta de formacion.
+    min_aceptacion: 0.50
+
+  automatizar_boilerplate:
+    titulo: "Límite de trabajo repetitivo (boilerplate)"
+    severidad: baja
+    # Porcentaje maximo de prompts que son la misma plantilla repetida. Por
+    # encima, conviene convertirlo en snippets o automatizacion, no gastarlo en IA.
+    max_boilerplate_pct: 20

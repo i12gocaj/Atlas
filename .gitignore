@@ -1,0 +1,38 @@
+# Datos generados (reproducibles desde la semilla, no se versionan)
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Entornos y editores
+.env*
+!.env.example
+.DS_Store
+.vscode/
+.idea/
+
+# Cobertura y analisis local
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Serena MCP (config por desarrollador, no del proyecto)
+.serena/
+
+# Dashboard: datos generados (reproducibles via export-dashboard)
+dashboard/data.js
+dashboard/data.json
+
+# Capturas y artefactos de navegador
+.playwright-mcp/
+.playwright-cli/
+atlas-*.png

@@ -1,0 +1,36 @@
+{"id": "intent_000", "lang": "es", "text": "implementa una funcion en python que agregue ventas por mes", "category": "codigo"}
+{"id": "intent_001", "lang": "es", "text": "crea un endpoint REST que devuelva los pedidos por cliente", "category": "codigo"}
+{"id": "intent_002", "lang": "es", "text": "anade paginacion con cursor al listado de facturas", "category": "codigo"}
+{"id": "intent_003", "lang": "en", "text": "write a function to parse the CSV and return typed objects", "category": "codigo"}
+{"id": "intent_004", "lang": "en", "text": "refactor this class to inject the database connection", "category": "codigo"}
+{"id": "intent_005", "lang": "en", "text": "implement retry with backoff for the http client", "category": "codigo"}
+{"id": "intent_006", "lang": "es", "text": "documenta el proceso de carga de la tabla clientes con sus reglas", "category": "documentacion"}
+{"id": "intent_007", "lang": "es", "text": "escribe el diccionario de datos de la tabla pagos", "category": "documentacion"}
+{"id": "intent_008", "lang": "es", "text": "redacta la nota de version del cambio en el esquema", "category": "documentacion"}
+{"id": "intent_009", "lang": "en", "text": "write the README with setup and deploy instructions", "category": "documentacion"}
+{"id": "intent_010", "lang": "en", "text": "document the validation rules applied to invoices", "category": "documentacion"}
+{"id": "intent_011", "lang": "en", "text": "create a functional guide of the reconciliation service", "category": "documentacion"}
+{"id": "intent_012", "lang": "es", "text": "genera tests unitarios para la transformacion de pagos con casos nulos", "category": "pruebas"}
+{"id": "intent_013", "lang": "es", "text": "disena casos UAT para validar el calculo de comisiones", "category": "pruebas"}
+{"id": "intent_014", "lang": "es", "text": "crea fixtures realistas de la tabla ventas para los tests", "category": "pruebas"}
+{"id": "intent_015", "lang": "en", "text": "write integration tests for the orders endpoint", "category": "pruebas"}
+{"id": "intent_016", "lang": "en", "text": "add a regression test for the negative amount bug", "category": "pruebas"}
+{"id": "intent_017", "lang": "en", "text": "property based tests for the aggregation function", "category": "pruebas"}
+{"id": "intent_018", "lang": "es", "text": "a partir de esta peticion de negocio extrae los requisitos tecnicos", "category": "requisitos"}
+{"id": "intent_019", "lang": "es", "text": "convierte esta historia de usuario en criterios de aceptacion", "category": "requisitos"}
+{"id": "intent_020", "lang": "es", "text": "especifica las reglas de calidad de dato para la tabla pagos", "category": "requisitos"}
+{"id": "intent_021", "lang": "en", "text": "define the minimal data model to support invoices", "category": "requisitos"}
+{"id": "intent_022", "lang": "en", "text": "list the questions to ask business before building this", "category": "requisitos"}
+{"id": "intent_023", "lang": "en", "text": "turn this business goal into a phased technical scope", "category": "requisitos"}
+{"id": "intent_024", "lang": "es", "text": "el proceso falla al cruzar ventas con cuentas, error de clave duplicada", "category": "debug"}
+{"id": "intent_025", "lang": "es", "text": "tengo una fuga de memoria en el job de facturas, donde esta", "category": "debug"}
+{"id": "intent_026", "lang": "es", "text": "despues del despliegue el campo importe llega en nulo, ayudame", "category": "debug"}
+{"id": "intent_027", "lang": "en", "text": "the deploy fails authenticating, why does it reject the login", "category": "debug"}
+{"id": "intent_028", "lang": "en", "text": "the cost calculation gives different results each run, why", "category": "debug"}
+{"id": "intent_029", "lang": "en", "text": "the service is slow only in production, where do I start", "category": "debug"}
+{"id": "intent_030", "lang": "es", "text": "analiza la evolucion del importe en ventas el ultimo trimestre", "category": "analisis"}
+{"id": "intent_031", "lang": "es", "text": "compara dos enfoques para calcular las comisiones y recomienda uno", "category": "analisis"}
+{"id": "intent_032", "lang": "es", "text": "cuantifica cuanto del coste viene de la tabla ventas", "category": "analisis"}
+{"id": "intent_033", "lang": "en", "text": "estimate the impact on latency of moving to batch processing", "category": "analisis"}
+{"id": "intent_034", "lang": "en", "text": "detect anomalies in the payments table over the last month", "category": "analisis"}
+{"id": "intent_035", "lang": "en", "text": "why did the error rate get worse last week, cross deploys and volume", "category": "analisis"}

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atlas-atmira"
+version = "0.1.0"
+description = "Atlas: observabilidad y gobierno del uso de IA en desarrollo (Reto 4, Hackathon Catedra Atmira)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Javier González Casares" },
+]
+keywords = [
+    "ai-governance",
+    "ai-assurance",
+    "copilot-audit",
+    "finops",
+    "ollama",
+]
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "PyYAML>=6.0",
+    "detect-secrets>=1.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+]
+
+[project.scripts]
+atlas = "atlas.cli:main"
+
+[project.urls]
+Repository = "https://github.com/i12gocaj/Atlas"
+Portfolio = "https://i12gocaj.github.io/portfolio/"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
